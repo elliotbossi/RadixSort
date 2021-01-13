@@ -11,5 +11,10 @@ public class Radix{
   }
 
   public static void merge(MyLinkedList original, MyLinkedList[] buckets){
+    int i = 0;
+    while (i<buckets.length){
+      original.extend(buckets[i]);
+      i += 1;
+    }
   }
 }
