@@ -18,6 +18,14 @@ public class Radix{
     }
   }
   public static void radixSortSimple(SortableLinkedList data){
+    int highlength = 0;
+    int i = 0;
+    while (i< data.size()){
+      if (data.get(i) > highlength){
+        highlength = data.get(i);
+      }
+      i += 1;
+    }
 
   }
 
