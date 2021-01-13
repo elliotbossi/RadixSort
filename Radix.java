@@ -17,4 +17,11 @@ public class Radix{
       i += 1;
     }
   }
+  public static void radixSortSimple(SortableLinkedList data){
+
+  }
+
+  public static void radixSort(SortableLinkedList data){
+    
+  }
 }
