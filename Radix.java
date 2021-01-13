@@ -5,8 +5,7 @@ public class Radix{
     return (int) ((n/temp)%10);
   }
   public static int length(int n){
-    n = Math.abs(n);
-    return (Integer.toString(n)).length();
+    return (Integer.toString(n).length());
   }
   public static void merge(SortableLinkedList original, SortableLinkedList[] buckets){
     int i = 0;
@@ -17,17 +16,12 @@ public class Radix{
     }
   }
   public static void radixSortSimple(SortableLinkedList data){
-    int highlength = 0;
-    int i = 0;
-    int x = 0;
-    while (i< data.size()){
-      if (data.get(i) > highlength){
-        highlength = data.get(i);
-      }
-      i += 1;
-    }
+    int highlength = 1;
 
-    i = 0;
+    int x = 0;
+
+    int i = 0;
+
     while (i<highlength){
 
       SortableLinkedList[] merger = new SortableLinkedList[10];
@@ -39,7 +33,10 @@ public class Radix{
       }
 
 			while(data.size()!=0) {
-        
+        if (i == 0){
+          int temp = Integer.max(length(data.get(0)), highlength);
+          highlength = temp;
+        }
         SortableLinkedList merger1 = merger[nth(data.get(0),i)];
 				merger1.add(data.get(0));
 
