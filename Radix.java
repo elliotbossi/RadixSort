@@ -10,7 +10,7 @@ public class Radix{
     return (Integer.toString(n)).length();
   }
 
-  public static void merge(MyLinkedList original, MyLinkedList[] buckets){
+  public static void merge(SortableLinkedList original, SortableLinkedList[] buckets){
     int i = 0;
     while (i<buckets.length){
       original.extend(buckets[i]);
@@ -22,6 +22,6 @@ public class Radix{
   }
 
   public static void radixSort(SortableLinkedList data){
-    
+
   }
 }
