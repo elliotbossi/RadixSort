@@ -53,7 +53,24 @@ public class Radix{
   public static void radixSort(SortableLinkedList data){
     SortableLinkedList greater = new SortableLinkedList();
     SortableLinkedList smaller = new SortableLinkedList();
-  
+    while(data.size() > 0){
+      int temp = data.get(0);
+      data.remove(0);
+      if (temp>0){
+        greater.add(temp);
+      }
+      else{
+        smaller.add((temp*(-1)));
+      }
+    }
+    radixSortSimple(greater);
+    radixSortSimple(smaller);
+    while(smaller.size()>0){
+      int temp = smaller.get(smaller.size()-1)*(-1);
+      smaller.remove(smaller.size()-1);
+      data.add(temp);
+    }
+    data.extend(greater);
 
   }
 }
