@@ -33,10 +33,12 @@ public class Radix{
       }
 
 			while(data.size()!=0) {
+
         if (i == 0){
           int temp = Integer.max(length(data.get(0)), highlength);
           highlength = temp;
         }
+
         SortableLinkedList merger1 = merger[nth(data.get(0),i)];
 				merger1.add(data.get(0));
 
@@ -49,6 +51,9 @@ public class Radix{
 
   }
   public static void radixSort(SortableLinkedList data){
+    SortableLinkedList greater = new SortableLinkedList();
+    SortableLinkedList smaller = new SortableLinkedList();
+  
 
   }
 }
